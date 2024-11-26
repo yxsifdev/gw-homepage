@@ -1,0 +1,47 @@
+---
+import Discord from "@/icons/Discord.astro";
+import Secure from "@/icons/Secure.astro";
+import gwIcon from "../images/gw-ico.webp";
+---
+
+<section
+  class="flex flex-col items-center justify-center h-screen select-none md:flex-row md:justify-between gap-y-5 md:gap-0"
+>
+  <img
+    src={gwIcon.src}
+    alt="gw-icon"
+    class="block md:hidden size-[200px] sm:size-[250px] md:size-[300px] rounded-full"
+  />
+  <div>
+    <div>
+      <h1
+        class="mb-5 text-5xl font-bold text-center text-transparent sm:text-6xl md:text-start lg:text-7xl bg-gradient-to-l from-purple-500 to-cyan-500 bg-clip-text"
+      >
+        Gatitos World
+      </h1>
+      <p
+        class="max-w-[25rem] text-neutral-500 text-lg mb-5 text-center md:text-start"
+      >
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam
+        accusantium at harum soluta assumenda deleniti modi sit veniam ipsa.
+      </p>
+    </div>
+    <div class="flex flex-wrap md:flex-nowrap gap-x-4 gap-y-2">
+      <a
+        href=""
+        class="inline-flex items-center justify-center w-full px-4 py-2 text-lg font-medium text-center transition-colors rounded gap-x-2 hover:underline bg-cyan-500 hover:bg-cyan-600"
+        ><Discord /> Discord</a
+      >
+      <a
+        href=""
+        class="inline-flex items-center justify-center w-full px-4 py-2 text-lg font-medium text-center transition-colors bg-purple-500 rounded gap-x-2 hover:underline hover:bg-purple-600"
+        ><Secure /> ¡Nuestra Guía!</a
+      >
+    </div>
+  </div>
+  <img
+    src={gwIcon.src}
+    alt="gw-icon"
+    class="hidden md:block size-[200px] sm:size-[250px] md:size-[300px] rounded-full"
+  />
+</section>

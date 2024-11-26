@@ -9,6 +9,9 @@
       "@/icons/*": [
         "src/icons/*"
       ],
+      "@/consts/*": [
+        "src/consts/*"
+      ],
       "@/models/*": [
         "src/models/*"
       ],

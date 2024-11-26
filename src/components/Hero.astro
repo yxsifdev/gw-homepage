@@ -2,10 +2,12 @@
 import Discord from "@/icons/Discord.astro";
 import Secure from "@/icons/Secure.astro";
 import gwIcon from "../images/gw-ico.webp";
+
+import Menu from "@/components/Menu.astro";
 ---
 
 <section
-  class="flex flex-col items-center justify-center h-screen select-none md:flex-row md:justify-between gap-y-5 md:gap-0"
+  class="relative flex flex-col items-center justify-center h-screen select-none md:flex-row md:justify-between gap-y-5 md:gap-0"
 >
   <img
     src={gwIcon.src}
@@ -44,6 +46,7 @@ import gwIcon from "../images/gw-ico.webp";
     alt="gw-icon"
     class="hidden md:block size-[200px] sm:size-[250px] md:size-[300px] rounded-full icon-img"
   />
+  <Menu />
 </section>
 
 <style>

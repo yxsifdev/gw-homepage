@@ -4,10 +4,12 @@ import Secure from "@/icons/Secure.astro";
 import gwIcon from "../images/gw-ico.webp";
 
 import Menu from "@/components/Menu.astro";
+import Section from "./Section.astro";
 ---
 
-<section
-  class="relative flex flex-col items-center justify-center h-screen select-none md:flex-row md:justify-between gap-y-5 md:gap-0"
+<Section
+  defaultClass="on"
+  class="relative flex flex-col items-center justify-center h-screen overflow-hidden md:flex-row md:justify-between gap-y-5 md:gap-0"
 >
   <img
     src={gwIcon.src}
@@ -22,7 +24,7 @@ import Menu from "@/components/Menu.astro";
         Gatitos World
       </h1>
       <p
-        class="max-w-[30rem] text-neutral-500 text-lg mb-5 text-center md:text-start text-balance"
+        class="max-w-[30rem] text-neutral-300 text-lg mb-5 text-center md:text-start text-balance"
       >
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam
         accusantium at harum soluta assumenda deleniti modi sit veniam ipsa. ✨
@@ -47,7 +49,7 @@ import Menu from "@/components/Menu.astro";
     class="hidden md:block size-[200px] sm:size-[250px] md:size-[300px] rounded-full icon-img"
   />
   <Menu />
-</section>
+</Section>
 
 <style>
   .icon-img {

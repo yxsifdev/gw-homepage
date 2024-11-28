@@ -5,6 +5,6 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   site: "https://yxsifdev.github.io",
-  base: "gw-homepage",
+  // base: "gw-homepage",
   integrations: [tailwind()],
 });

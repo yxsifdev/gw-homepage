@@ -5,6 +5,9 @@ interface Props {
 
 // Supports weights 100-900
 import "@fontsource-variable/onest";
+import "../styles/gradients.css";
+import BgGradient from "@/components/BgGradient.astro";
+import Header from "@/components/ui/Header.astro";
 
 const { title } = Astro.props;
 ---
@@ -15,14 +18,20 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="../../src/gw-icon.webp" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="../../src/images/gw-logo-christmas.webp"
+    />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
   <body>
-    <main class="">
+    <BgGradient />
+    <Header />
+    <div>
       <slot />
-    </main>
+    </div>
   </body>
 </html>
 <style is:global>
@@ -40,20 +49,11 @@ const { title } = Astro.props;
       "Open Sans",
       "Helvetica Neue",
       sans-serif;
-    /* background: #0a011c; */
-    /* background-color: #171717; */
-    background-color: #272934;
-    /* background: linear-gradient(
-      45deg,
-      rgba(0, 94, 94, 0.822),
-      rgba(60, 1, 78, 0.822),
-      rgba(0, 94, 94, 0.822)
-    );
-    background-repeat: no-repeat;
-    background-size: 400% 400%;
-    animation: bg-gradient 30s ease-in infinite; */
+    background-color: #000000;
     color-scheme: dark;
+    overflow-x: hidden;
   }
+
   @keyframes bg-gradient {
     0% {
       background-position: 0% 50%;
@@ -68,10 +68,10 @@ const { title } = Astro.props;
 
   ::-webkit-scrollbar {
     width: 10px;
-    background: transparent;
+    background: #000000;
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: #1a1a23;
+    background-color: #06b6d4;
   }
 </style>

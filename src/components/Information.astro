@@ -1,84 +1,59 @@
 ---
-import Bug from "@/icons/Bug.astro";
-import Battery from "@/icons/Battery.astro";
 import Cards from "./Cards.astro";
 import Section from "./Section.astro";
-import Events from "@/icons/Events.astro";
-import Secure from "@/icons/Secure.astro";
-import Logs from "@/icons/Logs.astro";
-import Podcast from "@/icons/Podcast.astro";
-import Starts from "@/icons/Starts.astro";
+
+import { cardsCommunity } from "@/consts/consts";
 ---
 
 <Section defaultClass="on" class="space-y-4">
   <div class="space-y-2 text-center">
-    <h2 class="text-4xl font-bold">Nuestra Comunidad</h2>
-    <p class="text-lg text-neutral-300">
+    <h2 class="text-4xl font-semibold lg:text-5xl">
+      Nuestra<br /><span class="text-cyan-500">Comunidad</span>
+    </h2>
+    <p class="text-lg text-zinc-300">
       Descubre más sobre cómo funciona nuestra comunidad y todo lo que te
       ofrecemos. ✨
     </p>
   </div>
   <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
-    <Cards class="flex flex-col items-center gap-y-2">
-      <Battery class="size-12 text-cyan-500" />
-      <div class="text-center">
-        <h3 class="text-xl font-medium">Calidad</h3>
-        <p class="text-neutral-300">
-          Trabajamos continuamente para garantizar que nuestra comunidad sea un
-          lugar de alta calidad, ideal para socializar y hacer amigos. 🌟
-        </p>
-      </div>
-    </Cards>
-    <Cards class="flex flex-col items-center gap-y-2">
-      <Events class="size-12 text-emerald-500" />
-      <div class="text-center">
-        <h3 class="text-xl font-medium">Eventos</h3>
-        <p class="text-neutral-300">
-          Organizamos eventos únicos para celebrar diversas temáticas y
-          ocasiones especiales. ¡No te los pierdas! 🎉
-        </p>
-      </div>
-    </Cards>
-    <Cards class="flex flex-col items-center gap-y-2">
-      <Secure class="text-yellow-500 size-12" />
-      <div class="text-center">
-        <h3 class="text-xl font-medium">Soporte</h3>
-        <p class="text-neutral-300">
-          Nuestro equipo de soporte siempre está dispuesto a ayudarte con
-          cualquier problema o duda que tengas en el servidor. 🤝
-        </p>
-      </div>
-    </Cards>
-    <Cards class="flex flex-col items-center gap-y-2">
-      <Logs class="text-purple-500 size-12" />
-      <div class="text-center">
-        <h3 class="text-xl font-medium">Documentación</h3>
-        <p class="text-neutral-300">
-          Accede a guías, normativas y recursos personalizados que te ayudarán a
-          aprovechar al máximo nuestra comunidad mientras evitas inconvenientes.
-          📚
-        </p>
-      </div>
-    </Cards>
-    <Cards class="flex flex-col items-center gap-y-4">
-      <Starts class="text-orange-500 size-12" />
-      <div class="text-center">
-        <h3 class="text-xl font-semibold text-white">Roles</h3>
-        <p class="text-neutral-300">
-          Gana roles al subir de nivel, mantente al día con notificaciones del
-          servidor y canjea monedas de pachinko por roles. 🏆
-        </p>
-      </div>
-    </Cards>
-    <Cards class="flex flex-col items-center gap-y-4">
-      <Podcast class="text-teal-500 size-12" />
-      <div class="text-center">
-        <h3 class="text-xl font-semibold text-white">Podcast</h3>
-        <p class="text-neutral-300">
-          Participar en los eventos de podcast, donde hablamos sobre temas
-          interesantes y ¡anécdotas inolvidables! 🎙️
-        </p>
-      </div>
-    </Cards>
+    {
+      cardsCommunity.map(({ Icon, label, content, color }) => {
+        let iconColor = "";
+        switch (color) {
+          case "cyan":
+            iconColor = "text-cyan-500 bg-cyan-500/20 rounded-full p-2";
+            break;
+          case "emerald":
+            iconColor = "text-emerald-500 bg-emerald-500/20 rounded-full p-2";
+            break;
+          case "yellow":
+            iconColor = "text-yellow-500 bg-yellow-500/20 rounded-full p-2";
+            break;
+          case "purple":
+            iconColor = "text-purple-500 bg-purple-500/20 rounded-full p-2";
+            break;
+          case "orange":
+            iconColor = "text-orange-500 bg-orange-500/20 rounded-full p-2";
+            break;
+          case "teal":
+            iconColor = "text-teal-500 bg-teal-500/20 rounded-full p-2";
+            break;
+          default:
+            iconColor = "text-cyan-500";
+            break;
+        }
+        return (
+          <Cards class="flex flex-col items-center gap-y-2">
+            <Icon class={`size-12 ${iconColor}`} />
+            <div class="text-center">
+              <h3 class="text-xl font-semibold text-transparent bg-gradient-to-l from-cyan-500 to-white to-60% bg-clip-text">
+                {label}
+              </h3>
+              <p class="text-zinc-300">{content}</p>
+            </div>
+          </Cards>
+        );
+      })
+    }
   </div>
 </Section>

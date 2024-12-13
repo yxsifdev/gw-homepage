@@ -12,12 +12,6 @@
       "@/consts/*": [
         "src/consts/*"
       ],
-      "@/models/*": [
-        "src/models/*"
-      ],
-      "@/lib/*": [
-        "src/lib/*"
-      ],
       "@/layouts/*": [
         "src/layouts/*"
       ],
